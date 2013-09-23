@@ -1,0 +1,14 @@
+{
+    "name": "cutter",
+    "version": "1.0",
+    "desc": "图片切割插件，用于图片hover时的信息提示",
+    "cover": "",
+    "tag":"动画",
+    "author": {
+        "name": "bachi",
+        "email": "bachi@taobao.com",
+        "page": ""
+    },
+    "type": "kissy-gallery",
+    "type-url": "http://gallery.kissyui.com/guide"
+}

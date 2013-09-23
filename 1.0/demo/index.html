@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>cutter的demo</title>
+    <script src="http://a.tbcdn.cn/s/kissy/1.3.0/kissy-min.js" charset="utf-8"></script>
+</head>
+<body>
+<h2>cutter的demo</h2>
+
+<style>
+	code {font-family:'Courier New'}
+</style>
+<link rel="stylesheet" href="skin.css" />
+		<div class="grid"> 鼠标移动到图片上...</div>
+		<div class="grid"> 
+			<!---{{ 正文 -->
+				<div class="mybox">
+					<!--item {{ -->
+					<div class="cutter-mojo">
+						<img src="1.jpg" /><!--默认图片-->
+						<div class="cutter-content"> 
+							<!--自定义内容{{-->
+							<p>content</p>
+							<span>
+								text info
+							</span>
+							<!--自定义内容}}-->
+						</div>
+					</div>
+					<!--item }} -->
+					<!--item {{ -->
+					<div class="cutter-mojo">
+						<img src="2.jpg" /><!--默认图片-->
+						<div class="cutter-content"> 
+							<!--自定义内容{{-->
+							<p>content</p>
+							<span>
+								text info
+							</span>
+							<!--自定义内容}}-->
+						</div>
+					</div>
+					<!--item }} -->
+					
+				</div>
+			<!---}} 正文 -->
+		</div>
+		<div class="grid">
+			<div>
+<pre><code>
+USEAGE:
+	new Cutter(node,options);
+API:
+	node:	Node对象
+	options:
+		out_speed:移出速度，默认为0.3
+		in_speed:移入速度，默认为0.5
+		animout_easing:移除动画样式，默认为'bounceOut'
+</code></pre>
+</div>
+
+<script>
+    var S = KISSY;
+    if (S.Config.debug) {
+        var srcPath = "../../../";
+        S.config({
+            packages:[
+                {
+                    name:"gallery",
+                    path:srcPath,
+                    charset:"utf-8",
+                    ignorePackageNameInUri:true
+                }
+            ]
+        });
+    }
+
+    S.use('gallery/cutter/1.0/index', function (S, Cutter) {
+		var cons = S.all('.cutter-mojo');
+		new Cutter(cons[0],{
+			animout_easing:'easeOut',
+			in_speed:0.3
+		});
+		new Cutter(cons[1]);
+    })
+</script>
+</body>
+</html>
