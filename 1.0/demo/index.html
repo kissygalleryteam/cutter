@@ -61,6 +61,9 @@ API:
 </div>
 
 <script>
+	if(window.location.href.indexOf('ks-debug') < 0){
+		window.location.href = window.location.href + '?ks-debug';
+	}
     var S = KISSY;
     if (S.Config.debug) {
         var srcPath = "../../../";
